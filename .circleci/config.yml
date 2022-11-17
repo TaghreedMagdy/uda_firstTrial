@@ -10,7 +10,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
-  print-worls:
+  print-world:
     docker:
       - image: circleci/node:13.8.0
     steps:
