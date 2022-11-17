@@ -7,20 +7,10 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "echo Hello, World!"
+          command: "echo <<UDA_ENV_TRIAL>>"
 
-  print-world:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - checkout
-      - run:
-          echo yara success
 
 workflows:
   say-hello-workflow:
     jobs:
       - print-hello
-      - print-world:
-          requires:
-            - print-hello
