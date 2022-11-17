@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "echo <<UDA_ENV_TRIAL>>"
+          command: "echo $UDA_ENV_TRIAL"
 
 
 workflows:
