@@ -16,6 +16,18 @@ jobs:
       - checkout
       - run:
           command: "echo hello wolrd > output.txt"
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths: out
+      
+  # print_output_file:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         command: "cat output.txt"
+
 
 
 workflows:
