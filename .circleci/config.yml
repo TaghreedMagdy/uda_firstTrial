@@ -17,8 +17,8 @@ jobs:
       - run:
           command: "echo hello wolrd > output.txt"
       - persist_to_workspace:
-          root: ./tmp/dir
-          paths: out
+          root: .
+          paths: ./out
       
   # print_output_file:
   #   docker:
