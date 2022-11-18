@@ -1,16 +1,24 @@
 version: 2.1
 
 jobs:
-  print-hello:
+  # print-hello:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         command: "echo Hello"
+
+  save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
       - run:
-          command: "echo $UDA_ENV_TRIAL"
+        command: "echo hello wolrd > output.txt"
 
 
 workflows:
   say-hello-workflow:
     jobs:
-      - print-hello
+      - save_hello_world_ouput
