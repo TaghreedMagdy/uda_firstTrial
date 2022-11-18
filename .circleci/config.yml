@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: "echo hello wolrd > output.txt"
+          command: "echo hello wolrd > output.txt"
 
 
 workflows:
