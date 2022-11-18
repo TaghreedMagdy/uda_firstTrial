@@ -15,12 +15,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "make a directory to be a root"
-          command: "mkdir -p workspace"
-          name: "echo ouput"
-          command: "echo hello wolrd > workspace/output.txt"
+          command: "echo hello wolrd > output.txt"
       - persist_to_workspace:
-          root: workspce
+          root: .
           paths: output.txt
       
   # print_output_file:
