@@ -17,7 +17,7 @@ jobs:
       - run:
           command: "echo hello wolrd > output.txt"
       - persist_to_workspace:
-          root: /tmp/dir
+          root: ./tmp/dir
           paths: out
       
   # print_output_file:
