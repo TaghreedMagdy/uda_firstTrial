@@ -25,10 +25,10 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          command: "cat output.txt"
       - attach_workspace:
           at: .
+      - run:
+          command: "cat output.txt"
 
 
 
