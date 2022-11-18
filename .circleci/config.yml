@@ -15,10 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "echo hello wolrd > output.txt"
+          command: "mkdir -p workspace"
+          command: "echo hello wolrd > workspace/output.txt"
       - persist_to_workspace:
-          root: .
-          paths: ./out
+          root: workspce
+          paths: output.txt
       
   # print_output_file:
   #   docker:
