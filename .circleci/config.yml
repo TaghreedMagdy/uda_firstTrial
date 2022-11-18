@@ -20,13 +20,15 @@ jobs:
           root: .
           paths: output.txt
       
-  # print_output_file:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         command: "cat output.txt"
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          command: "cat output.txt"
+      - attach_workspace:
+          at: .
 
 
 
@@ -34,3 +36,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - save_hello_world_output
+      - print_output_file:
+          requires:
+            - save_hello_world_output
